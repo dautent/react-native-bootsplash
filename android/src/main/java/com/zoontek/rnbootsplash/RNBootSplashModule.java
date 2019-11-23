@@ -48,7 +48,7 @@ public class RNBootSplashModule extends ReactContextBaseJavaModule implements Li
 
   @ReactMethod
   public void hide(final Float duration) {
-    if (hideHasRunOnce) return;
+    // if (hideHasRunOnce) return;
 
     Activity activity = getReactApplicationContext().getCurrentActivity();
 

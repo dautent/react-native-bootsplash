@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import com.zoontek.rnbootsplash.RNBootSplash;
 
 public class RNBootSplashActivity extends AppCompatActivity {
 
@@ -21,6 +22,7 @@ public class RNBootSplashActivity extends AppCompatActivity {
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    RNBootSplash.adapt(this);
 
     try {
       Intent intent = new Intent(this, getMainActivityClass());
