@@ -17,7 +17,7 @@ SplashScreen.show(this, R.style.SplashScreenTheme);// 此时只能自定义`stat
 
 ### 解决问题
 - 根据[Android Splash Screen最佳实践，包含全面屏，刘海屏适配](https://www.jianshu.com/p/105885c44e49)文章的讲述，完美适配刘海屏使用`layer-list`的方式可以做到，再加上给`SplashActivity`添加启动时的主题，可以做到应用冷启动时也不会有白屏。
-- 所以将上述方案移植到继承自`ReactActivity`的`MainActivity`怎么样呢？答案是可以适配，但是等到应用进入到RN页面时，`MainActivity`的theme中带着闪屏页面，所以该页面不会消失。
+- 所以将上述方案移植到继承自`ReactActivity`的`MainActivity`怎么样呢？答案是可以适配，但是等到应用进入到RN页面时，`MainActivity`的theme中带着闪屏页面，所以该页面不会消失(在 `MainActivity#onCreate 回调中 再次设置一个普通的主题，貌似就能解决闪屏主题不消失的问题`)。
 - 这样看起来适配刘海屏的闪屏页面必须单独作为一个Activity出现。
 - 翻看[react-native-bootsplash](https://github.com/zoontek/react-native-bootsplash)代码实现，刚好利用上了SplashActivity，那么这里就可以任意大作文章而不会影响到RN页面了。
 
