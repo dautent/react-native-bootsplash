@@ -24,3 +24,15 @@ SplashScreen.show(this, R.style.SplashScreenTheme);// 此时只能自定义`stat
 ### todo
 - 添加完整example
 - 完整对比效果
+
+
+```
+2019/10/09
+1.挂梯子的时候，有些路线在使用浏览器访问完全没问题，但是终端不能ping通也不能获取到正确ip地址（cip.cc）所以编译安卓应用永远在出错。所以选择合适的路线后，除了浏览器好使以外终端也要好使。
+2.react-native-splash-screen，全屏需求，参考dida_RN
+3.安卓的splash适配刘海屏：https://www.jianshu.com/p/105885c44e49
+4.在RN应用中完美适配刘海屏，还需要继续探索，下一步计划使用ImmersionBar来适配SplashScreen产生的Dialog，
+5.记录：使用上面的方案，利用Theme预加载，然后给Activity添加完整style达到适配刘海屏。使用同样的style给SplashScreen的Dialog时效果就不好。尝试方案：
+一、给MainActivity添加Splash的style，RN加载完成后通知安卓这边替换Theme，但是没有效果。
+二、在SplashActivity中尝试监听RN被加载完成，然后跳转MainActivity。但是如何监听RN被加载完成，一直没有实现
+```
